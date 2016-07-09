@@ -1,0 +1,28 @@
+
+module.exports = function(app) {
+
+	// server routes ===========================================================
+	// handle things like api calls
+	
+	 
+	// authentication routes
+
+	// frontend routes =========================================================
+	// route to handle all angular requests
+	app.get('*', function(req, res) {
+		res.sendfile('./public/index.html');
+	});
+	
+	app.route('/nerds').post((req, res)=>{
+    user.create(req.body,function(err,Email){
+        if(e){return console.log(e)}
+        else{console.log('New email saved: '+Email); res.send(Email)};
+    });
+	
+});
+	
+};
+
+
+
+
