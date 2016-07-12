@@ -8,10 +8,17 @@
 
 	<!-- CSS -->
 
-    
+  
 	<link rel="stylesheet" href="css/libs/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
-	 <link rel="stylesheet" href="css/Animsition/animsition.min.css">
+ <!-- custom styles -->
+	<link rel="stylesheet" href="css/Animsition/animsition.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+  
+
+
+	
+
 	
 
 	
@@ -21,31 +28,33 @@
 	<script src="css/libs/angular/angular.min.js"></script>
 	<script src="css/libs/angular-route/angular-route.min.js"></script>
 	
+	
 
 	<!-- ANGULAR CUSTOM -->
 	<script src="js/controllers/MainCtrl.js"></script>
-	<script src="js/controllers/NerdCtrl.js"></script>
-	<script src="js/services/NerdService.js"></script>
-	<script src="js/controllers/GeekCtrl.js"></script>
-	<script src="js/services/GeekService.js"></script>
+	<script src="js/controllers/ContactCtrl.js"></script>
+	<script src="js/services/ContactService.js"></script>
+	<script src="js/controllers/PhotoCtrl.js"></script>
+	<script src="js/services/PhotoService.js"></script>
 	<script src="js/controllers/VideoCtrl.js"></script>
 	<script src="js/services/VideoService.js"></script>
+
+	
 	
 	<script src="js/appRoutes.js"></script>
 	<script src="js/app.js"></script>
-	<script src="js/try.js"></script>
 </head>
-<body ng-app="sampleApp" ng-controller="NerdController">
+<body ng-app="sampleApp" ng-controller="ContactController">
 <div class="container">
 	
 	<!-- HEADER -->
-	<nav class="navbar navbar-inverse">
+	<nav id="sticker" class="navbar navbar-inverse">
 		<div class="navbar-header">
 			<a class="navbar-brand" href="/">Home</a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li><a href="/nerds">Contact</a></li>
-			<li><a href="/geeks">Photos</a></li>
+			<li><a href="/contact">Contact</a></li>
+			<li><a href="/photos">Photos</a></li>
 			<li><a href="/videos">Videos</a></li>
 		</ul>
 	</nav>
@@ -69,6 +78,29 @@
 		});
 	
 	</script>
+<script src="js/jquery.sticky.js"></script>
+<script>
+  $(document).ready(function(){
+    $("#sticker").sticky({topSpacing:0, zIndex:10000});
+  });
+</script>
+<script>
+
+          $(document).load(function() {
+              
+              $('refresh').click(function(){
+                  window.location="http://localhost:8090/img/image1.jpg";
+              });
+              
+          });
+</script>
 	
 </body>
 </html>
+
+
+
+
+
+
+

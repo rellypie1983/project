@@ -85,6 +85,7 @@ sub {
 }
 img {
   border: 0;
+	
 }
 svg:not(:root) {
   overflow: hidden;
@@ -6513,6 +6514,7 @@ button.close {
 .modal-header:after,
 .modal-footer:after {
   clear: both;
+	
 }
 .center-block {
   display: block;

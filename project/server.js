@@ -2,18 +2,14 @@
 var express        = require('express');
 var app            = express();
 var router         = express.Router();//ADDED 7/7/16
-var Email          = require('./app/models/Nerd.js');
 var mongoose       = require('mongoose');
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 
 // configuration ===========================================
 	
-// config files
-var db = require('./config/db');
-require('./config/db.js');//ADDED 7/7/16
 
-var port = process.env.PORT || 8080; // set our port
+var port = process.env.PORT || 8090; // set our port
 // mongoose.connect(db.url); // connect to our mongoDB database (commented out after you enter in your own credentials)
 
 // get all data/stuff of the body (POST) parameters
@@ -28,7 +24,6 @@ app.use(express.static(__dirname + '/public')); // set the static files location
 
 // routes ==================================================
 require('./app/routes')(app); // pass our application into our routes
-
 
 
 

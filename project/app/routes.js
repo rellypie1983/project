@@ -1,8 +1,40 @@
+var mongoose = require('mongoose');
+
+//the data base is called client-email
+//the collection is emails ie db.emails.find()//
+mongoose.connect("mongodb://localhost/client-email", function(err) {
+		if(err) {
+	     console.log("Failed connecting to Mongodb!");
+		} else {
+			console.log("Succnessfully connected to Mongo!");
+		}
+});
+
+
+var emailSchema = new mongoose.Schema({
+	name: String,
+	email: String
+});
+
+var user = mongoose.model("Email", emailSchema);
+
+module.exports = user;
 
 module.exports = function(app) {
 
 	// server routes ===========================================================
 	// handle things like api calls
+	
+	app.post('/new', function(req, res) {
+		new user({
+			name: req.body.name,
+			email: req.body.email
+		}).save(function(err,doc) {
+			if(err)  res.json(err);
+			else res.send('Successfully inserted! Click back to get back to the page');
+		});
+	});
+	
 	
 	 
 	// authentication routes
@@ -13,13 +45,6 @@ module.exports = function(app) {
 		res.sendfile('./public/index.html');
 	});
 	
-	app.route('/nerds').post((req, res)=>{
-    user.create(req.body,function(err,Email){
-        if(e){return console.log(e)}
-        else{console.log('New email saved: '+Email); res.send(Email)};
-    });
-	
-});
 	
 };
 

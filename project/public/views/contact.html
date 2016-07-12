@@ -19,15 +19,14 @@
           <li class="phone"><a href="tel:502-751-9761">502-751-9761</a></li>
           <li class="mail"><a href="mailto:swaffleman@hotmail.com">swaffleman@hotmail.com</a></li>
           <li>Additionally, if you'ld like to add your e-mail to my client list, then you may submit your name and e-mail below:</li>
-					<form method="post" id = "email"> 
+					<form  action="/new" method="POST">
+						<label for="email">Email: </label>
+						<input type="email" name="email"/><br>
+						<label for="name">Name: </label>
+						<input type="text" name="name" /><br>
+						<input type="submit" />
 					
-						  <label for="name">Name:</label>
-						  <input type="text" id="name">
-
-							<label for="email">Email:</label>
-							<input type="text" id="email">
-
-							<button id="send" type="submit" onclick="post">Send</button>
+						 
          </form>
         </ul>
       </section>
