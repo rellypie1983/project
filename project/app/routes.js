@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-//the data base is called client-email
+//the data base is called client-email (or whatever you want it to be...this is what I use on my computer)
 //the collection is emails ie db.emails.find()//
 mongoose.connect("mongodb://localhost/client-email", function(err) {
 		if(err) {
